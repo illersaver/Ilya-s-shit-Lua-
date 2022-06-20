@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <contentpackage name="Ilya's shit(Lua)" modversion="1" corepackage="False" gameversion="0.17.16.0">
   <Other file="%ModDir%/Lua/Autorun/ShitInit.lua" />
-  <Other file="%ModDir%/Lua/SecretPanel.lua" />
-  <Other file="%ModDir%/Lua/Smite.lua" />
+  <Other file="%ModDir%/Lua/Funny Shit/SecretPanel.lua" />
+  <Other file="%ModDir%/Lua/Funny Shit/Smite.lua" />
+  <Other file="%ModDir%/Lua/Funny Shit/FunctionTest/.lua" />
   <Item file="%ModDir%/ToolsnWeapons/Toolbox/SyndieToolbox.xml" />
   <Item file="%ModDir%/ToolsnWeapons/Police Baton/PoliceBaton.xml" />
 </contentpackage>
