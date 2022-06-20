@@ -1,5 +1,3 @@
-if CLIENT then return end
-if SERVER then
     -- csqrb#7132 <-- CEO of coding
     Game.AddCommand("smite", "we do a little trolling", function () end, getValidArgs, isCheat)
     Game.AssignOnClientRequestExecute("smite", function(client,cursor,args) -- function(client,cursor,args)
@@ -40,4 +38,3 @@ if SERVER then
             print("(smite Mode ''Person'') \n Tool for more SS13 like administrating expirience!! try it! \n FentanylFun \n Burn \n Orangeboi \n Radiation \n MechanicDisease \n Boom")
         end
     end)
-end

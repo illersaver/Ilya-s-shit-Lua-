@@ -1,5 +1,3 @@
-if CLIENT then return end
-if SERVER then
     -- csqrb#7132 <-- CEO of coding
     Game.AddCommand("secretpanel", "hee-hee-hi-ha", function () end, getValidArgs, isCheat)
     Game.AssignOnClientRequestExecute("secretpanel", function(client,cursor,args) -- function(client,cursor,args)
@@ -12,4 +10,3 @@ if SERVER then
             Game.ExecuteCommand("fixhulls")
         end
     end)
-end
