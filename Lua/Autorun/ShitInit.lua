@@ -1,0 +1,2 @@
+require("Smite")
+require("SecretPanel")
