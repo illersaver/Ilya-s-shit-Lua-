@@ -6,4 +6,5 @@ if SERVER then
         require("Funny Shit.Smite")
         require("Funny Shit.SecretPanel")
         require("Funny Shit.FunctionTest")
+        require("Funny Shit.Affliction")
 end
