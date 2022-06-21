@@ -6,3 +6,8 @@ function seekforplayer(player)
         end
     end
 end
+function afflictionadd(type, player, power)
+    local bruh = AfflictionPrefab.Prefabs[type]
+    local limb = player.Character.AnimController.MainLimb
+    player.Character.CharacterHealth.ApplyAffliction(limb, bruh.Instantiate(tonumber(power)),true)
+end

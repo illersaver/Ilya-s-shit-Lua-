@@ -3,8 +3,6 @@ Game.AssignOnClientRequestExecute("affliction", function(client,cursor,args)
     if args[1] == "Help" or args[1] == "help" then
         print("(affliction affname ''person'' power)")
     else
-    local bruh = AfflictionPrefab.Prefabs[args[1]]
-    local limb = seekforplayer(args[2]).Character.AnimController.MainLimb
-    seekforplayer(args[2]).Character.CharacterHealth.ApplyAffliction(limb, bruh.Instantiate(tonumber(args[3])),true)    
+        afflictionadd(args[1], seekforplayer(args[2]), args[3])
     end
 end)

@@ -1,16 +1,12 @@
     -- csqrb#7132 <-- CEO of coding
-local switch = {
+local smite = {
     ["FentanylFun"] = function(clientpl)
        --Cool drugs
-        local fentanylfuni = AfflictionPrefab.Prefabs["opiateoverdose"]
-        local limb = clientpl.Character.AnimController.MainLimb
-        clientpl.Character.CharacterHealth.ApplyAffliction(limb, fentanylfuni.Instantiate(40),true)
+       afflictionadd("opiateoverdose", clientpl, 40)
     end,
     ["Burn"] = function(clientpl)
        --"Ma friki'n tee ma bri'ish lads"
-        local Burn = AfflictionPrefab.Prefabs["burn"]
-        local limb = clientpl.Character.AnimController.MainLimb
-        clientpl.Character.CharacterHealth.ApplyAffliction(limb, Burn.Instantiate(40),true)
+       afflictionadd("burn", clientpl, 40)
     end,
     ["Orangeboi"] = function(clientpl)
         --Ok
@@ -19,39 +15,53 @@ local switch = {
     end,
     ["Radiation"] = function(clientpl)
         --Sralker:Ten Samusa
-        local rad = AfflictionPrefab.Prefabs["radiationsickness"]
-        local limb = clientpl.Character.AnimController.MainLimb
-        clientpl.Character.CharacterHealth.ApplyAffliction(limb, rad.Instantiate(40),true)
+        afflictionadd("radiationsickness", clientpl, 40)
     end,
     ["MechanicDisease"] = function(clientpl)
             --Germany
-        local drunk = AfflictionPrefab.Prefabs["drunk"]
-        local limb = clientpl.Character.AnimController.MainLimb
-        clientpl.Character.CharacterHealth.ApplyAffliction(limb, drunk.Instantiate(80),true)
+        afflictionadd("drunk", clientpl, 80)
     end,
     ["Boom"] = function(clientpl)
         --Testicular torsion
         Game.Explode(clientpl.Character.WorldPosition, 30, 50, 50)
     end,
-    ["Lol"] = function(clientpl)
-        --Rip and Tear
-        local x = 10       
-        local Blunt = AfflictionPrefab.Prefabs["blunttrauma"]
-        local limb = clientpl.Character.AnimController.MainLimb            
-        repeat
-            clientpl.Character.CharacterHealth.ApplyAffliction(limb, Blunt.Instantiate(100),true)
-            x = x-1
-        until x == 0
+    ["Help"] = function()
+        print("(smite Mode ''Person'') \n Tool for more SS13 like administrating expirience!! try it! \n FentanylFun \n Burn \n Orangeboi \n Radiation \n MechanicDisease \n Boom")
+    end
+}
+local antismite = {
+    ["Syndistuff"] = function(clientpl)
+        local baton = ItemPrefab.GetItemPrefab("Police baton")
+        local smg = ItemPrefab.GetItemPrefab("smg")
+        local smgammo = ItemPrefab.GetItemPrefab("smgmagazine")
+        Entity.Spawner.AddItemToSpawnQueue(baton, clientpl.Character.Inventory, nil, nil)
+        Entity.Spawner.AddItemToSpawnQueue(smg, clientpl.Character.Inventory, nil, nil)
+        Entity.Spawner.AddItemToSpawnQueue(smgammo, clientpl.Character.Inventory, nil, nil)
+    end,
+    ["Coolafflictions"] = function(clientpl)
+        afflictionadd("strengthen", clientpl, 600)
+        afflictionadd("huskinfectionresistance", clientpl, 600)
+        afflictionadd("paralysisresistance", clientpl, 800)
+        afflictionadd("haste", clientpl, 600)
+        afflictionadd("durationincrease", clientpl, 600)
     end,
     ["Help"] = function()
-        print("(smite Mode ''Person'') \n Tool for more SS13 like administrating expirience!! try it! \n FentanylFun \n Burn \n Orangeboi \n Radiation \n MechanicDisease \n Boom")            
+        print("(antismite Mode ''Person'') \n Syndistuff\n Coolafflictions")
     end
 }
 Game.AddCommand("smite", "we do a little trolling", function () end, getValidArgs, isCheat)
 Game.AssignOnClientRequestExecute("smite", function(client,cursor,args) -- function(client,cursor,args)
     local clientpl = seekforplayer(args[2])
-    local trolling = switch[args[1]]
-    if(trolling) then
-        trolling(clientpl)
+    local smite = smite[args[1]]
+    if(smite) then
+        smite(clientpl)
+    end
+end)
+Game.AddCommand("antismite", "we do a little helping", function () end, getValidArgs, isCheat)
+Game.AssignOnClientRequestExecute("antismite", function(client,cursor,args) -- function(client,cursor,args)
+    local clientpl = seekforplayer(args[2])
+    local antismite = antismite[args[1]]
+    if(antismite) then
+        antismite(clientpl)
     end
 end)
