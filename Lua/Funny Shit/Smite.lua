@@ -33,6 +33,16 @@ local switch = {
         --Testicular torsion
         Game.Explode(clientpl.Character.WorldPosition, 30, 50, 50)
     end,
+    ["Lol"] = function(clientpl)
+        --Rip and Tear
+        local x = 10       
+        local Blunt = AfflictionPrefab.Prefabs["blunttrauma"]
+        local limb = clientpl.Character.AnimController.MainLimb            
+        repeat
+            clientpl.Character.CharacterHealth.ApplyAffliction(limb, Blunt.Instantiate(100),true)
+            x = x-1
+        until x == 0
+    end,
     ["Help"] = function()
         print("(smite Mode ''Person'') \n Tool for more SS13 like administrating expirience!! try it! \n FentanylFun \n Burn \n Orangeboi \n Radiation \n MechanicDisease \n Boom")            
     end
