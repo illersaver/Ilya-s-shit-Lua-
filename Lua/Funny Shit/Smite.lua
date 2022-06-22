@@ -18,7 +18,7 @@ local smite = {
         afflictionadd("radiationsickness", clientpl, 40)
     end,
     ["MechanicDisease"] = function(clientpl)
-            --Germany
+        --Germany
         afflictionadd("drunk", clientpl, 80)
     end,
     ["Boom"] = function(clientpl)
