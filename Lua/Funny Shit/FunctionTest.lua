@@ -6,12 +6,14 @@ function seekforplayer(player)
         end
     end
 end
+
 --Add affliction to someone
 function afflictionadd(type, player, power)
     local bruh = AfflictionPrefab.Prefabs[type]
     local limb = player.Character.AnimController.MainLimb
     player.Character.CharacterHealth.ApplyAffliction(limb, bruh.Instantiate(tonumber(power)),true)
 end
+
 --Spawn shit in someone inventory
 function spawniteminv(item, player)
     local item = ItemPrefab.GetItemPrefab(item)
