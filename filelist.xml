@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Ilya's shit(Lua)" modversion="1" corepackage="False" gameversion="0.17.16.0">
+<contentpackage name="Ilya's shit(Lua)" modversion="1.0.0" corepackage="False" gameversion="0.17.16.0">
   <Other file="%ModDir%/Lua/Autorun/ShitInit.lua" />
   <Other file="%ModDir%/Lua/Funny Shit/SecretPanel.lua" />
   <Other file="%ModDir%/Lua/Funny Shit/Smite.lua" />
