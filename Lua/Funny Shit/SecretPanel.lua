@@ -1,7 +1,9 @@
 local switch = {
+    --Help'in
     ["Help"] = function()
             print("(secretpanel -Mode-) \n secret panel for administrating stuff \n FixAll")
     end,
+    --Fixes even relationshit with your father!
     ["FixAll"] = function()
             Game.ExecuteCommand("fixwalls")
             Game.ExecuteCommand("fixitems")

@@ -26,15 +26,19 @@ local smite = {
         Game.Explode(clientpl.Character.WorldPosition, 30, 50, 50)
     end,
     ["Help"] = function()
+        --Help'in
         print("(smite Mode ''Person'') \n Tool for more SS13 like administrating expirience!! try it! \n FentanylFun \n Burn \n Orangeboi \n Radiation \n MechanicDisease \n Boom")
     end
 }
+    --Cool shit, if you wanna troll someone
 local antismite = {
+    --Cool assbeating stuff
     ["Syndistuff"] = function(clientpl)
         spawniteminv("Police baton", clientpl)
         spawniteminv("smg", clientpl)
         spawniteminv("smgmagazine", clientpl)
     end,
+    --I'M FUCKING INVINCIBLE
     ["Coolafflictions"] = function(clientpl)
         afflictionadd("strengthen", clientpl, 600)
         afflictionadd("huskinfectionresistance", clientpl, 600)
@@ -42,10 +46,12 @@ local antismite = {
         afflictionadd("haste", clientpl, 600)
         afflictionadd("durationincrease", clientpl, 600)
     end,
+    --Help'in(Again)
     ["Help"] = function()
         print("(antismite Mode ''Person'') \n Syndistuff\n Coolafflictions")
     end
 }
+    --Commands
 Game.AddCommand("smite", "we do a little trolling", function () end, getValidArgs, isCheat)
 Game.AssignOnClientRequestExecute("smite", function(client,cursor,args) -- function(client,cursor,args)
     local clientpl = seekforplayer(args[2])

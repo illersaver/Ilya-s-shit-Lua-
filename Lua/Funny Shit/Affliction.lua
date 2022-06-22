@@ -1,3 +1,4 @@
+--This shit alredy exist in barotrauma, but i have 1 iq
 Game.AddCommand("affliction", "hee-hee-hi-ha", function () end, getValidArgs, isCheat)
 Game.AssignOnClientRequestExecute("affliction", function(client,cursor,args)
     if args[1] == "Help" or args[1] == "help" then
