@@ -11,3 +11,7 @@ function afflictionadd(type, player, power)
     local limb = player.Character.AnimController.MainLimb
     player.Character.CharacterHealth.ApplyAffliction(limb, bruh.Instantiate(tonumber(power)),true)
 end
+function spawniteminv(item, player)
+    local item = ItemPrefab.GetItemPrefab(item)
+    Entity.Spawner.AddItemToSpawnQueue(item, player.Character.Inventory, nil, nil)
+end

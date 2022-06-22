@@ -31,12 +31,9 @@ local smite = {
 }
 local antismite = {
     ["Syndistuff"] = function(clientpl)
-        local baton = ItemPrefab.GetItemPrefab("Police baton")
-        local smg = ItemPrefab.GetItemPrefab("smg")
-        local smgammo = ItemPrefab.GetItemPrefab("smgmagazine")
-        Entity.Spawner.AddItemToSpawnQueue(baton, clientpl.Character.Inventory, nil, nil)
-        Entity.Spawner.AddItemToSpawnQueue(smg, clientpl.Character.Inventory, nil, nil)
-        Entity.Spawner.AddItemToSpawnQueue(smgammo, clientpl.Character.Inventory, nil, nil)
+        spawniteminv("Police baton", clientpl)
+        spawniteminv("smg", clientpl)
+        spawniteminv("smgmagazine", clientpl)
     end,
     ["Coolafflictions"] = function(clientpl)
         afflictionadd("strengthen", clientpl, 600)
